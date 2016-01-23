@@ -1,0 +1,16 @@
+<p>
+  <h1><%= @article.title %></h1>
+</p>
+<div class="row">
+  <div class="col-md-4 pull-right center">
+    <p>Written by: <%= @article.user.first_name %> <%= @article.user.last_name %></p>
+  </div>
+  <div class="well">
+    <p>
+      <%= @article.content %>
+    </p>
+
+  </div>
+</div>
+
+<h5><%= link_to "Return to Articles Listing", articles_path, class: "btn btn-warning btn-small" %></h5>
