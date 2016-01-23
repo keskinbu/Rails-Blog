@@ -2,13 +2,24 @@
 <html>
 <head>
   <title>TestRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header class="nav">
+    <div class="container">
+      <%= link_to "Home", "", class: "logo", id: "logo" %>
+      <div class="nav_item">
+        <%= link_to "Test", "", class: "nav-menu" %>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <div class="footer container">
+    <p>&copy; My Articles 2016</p>
+  </div>
 </body>
 </html>

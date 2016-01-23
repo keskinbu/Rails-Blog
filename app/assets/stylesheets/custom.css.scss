@@ -1,0 +1,91 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #333333;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 44px;
+  color: #333333;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 27px;
+  color: #333333;
+  font-weight: 200;
+}
+
+a {
+  font-size: 18px;
+  line-height: 26px;
+  color: #0088cc;
+  font-weight: 300;
+}
+
+a:hover {
+  text-decoration:none;
+  color: #0088cc;
+}
+
+
+$navbar-default-bg: #321321;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+
+#logo {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  float: left;
+  font-size: 1em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+#logo:hover{
+  color: white;
+}
+
+.nav {
+  background-color: #333333;
+  height:50px;
+  color: #ffffff;
+}
+
+.nav a{
+  color: #ffffff;
+}
+
+.article_area {
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+}
+
+
+.nav_item {
+  margin-left: 25px;
+  float: left;
+}
+
+.nav-menu {
+  text-decoration: none;
+}
+
+.nav-menu a {
+  
+}
+
+.footer {
+  margin-top: 25px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
