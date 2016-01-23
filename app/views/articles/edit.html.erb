@@ -1,0 +1,36 @@
+<p>
+  <h1>Edit Article</h1>
+  <hr/>
+</p>
+
+<% if @article.errors.any? %>
+  <div class="row">
+    <div class="alert alert-danger col-md-8 col-md-offset-2">
+      <h5>Please correct the following errors:</h5>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @article do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+      
+      <%= f.label :tags %>
+      <%= f.text_field :tags %>
+      
+      <%= f.submit 'Edit Article', class: "btn btn-success" %>
+      
+    <% end %>
+    
+  </div>
+</div>
