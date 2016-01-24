@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
    belongs_to :user
    has_many :likes
+   has_many :article_styles
+   has_many :styles, through: :article_styles
    validates :user_id, presence: true
    validates :title, presence:true, length: { minimum: 5, maximum: 100 }
    validates :content, presence:true, length: { minimum: 20 }
