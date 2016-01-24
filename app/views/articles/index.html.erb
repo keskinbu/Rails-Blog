@@ -7,6 +7,9 @@
   <div class="container">
     
     <div class="col-lg-8 well article_area">
+      <div class="picture">
+        <%= image_tag(article.picture.url, size: "250x150", class: "img-response") if article.picture? %>
+      </div>
       <h4><%= link_to article.title, article_path(article) %></h4>
       <p><%= article.content %></p>
       <p>
@@ -14,6 +17,8 @@
       </p>
     </div>
   </div>
+  
+  
 <% end %>
 
 

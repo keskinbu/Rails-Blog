@@ -89,3 +89,14 @@ $navbar-default-color: $light-orange;
   border-top: 1px solid #eaeaea;
   color: #777;
 }
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+.show_article {
+  margin: 10px 10px 10px 10px;
+}
