@@ -1,11 +1,15 @@
 class ArticlesController < ApplicationController
   
+  before_action :set_article, only: [:edit, :update, :show, :like]
+  before_action :require_user, except: [:show, :index]
+  before_action :require_same_user, only: [:edit, :update]
+  
   def index
     @articles = Article.paginate(page: params[:page], per_page: 3)
   end
   
   def show
-    @article = Article.find(params[:id])
+    
   end
   
   def new
@@ -14,7 +18,7 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
-    @article.user = User.find(1)
+    @article.user = current_user
     
     if @article.save
       flash[:success] = "Your article was created succesfully!"
@@ -25,22 +29,20 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-    @article = Article.find(params[:id])
+    
   end
   
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
       flash[:success] = "Your article was updated succesfully!"
-      redirect_to article_path(@article)
+      redirect_to user_path(@user)
     else
       render :edit
     end
   end
   
   def like
-    @article = Article.find(params[:id])
-    like = Like.create(like: params[:like], user: User.first, article: @article)
+    like = Like.create(like: params[:like], user: current_user, article: @article)
     if like.valid?
       flash[:success] = "Your selection was succesful"
       redirect_to :back
@@ -55,5 +57,22 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :content, :tags, :picture)
     end
+    
+    def set_article
+      @article = Article.find(params[:id])
+    end
       
+    def require_same_user
+      if current_user != @article.user
+        flash[:danager] = "You can only edit own your articles"
+        redirect_to articles_path
+      end
+    end
+    
+    def require_user
+      if !logged_in?
+        flash[:danger] = "You must be logged in to perform that action"
+        redirect_to :back
+      end
+    end
 end

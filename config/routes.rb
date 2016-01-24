@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   
   get '/register', to: 'users#new'
   
+  get '/login', to: 'logins#new'
+  post '/login', to: 'logins#create'
+  get '/logout', to: 'logins#destroy'
   
   
   

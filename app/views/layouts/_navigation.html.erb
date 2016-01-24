@@ -1,0 +1,11 @@
+<header class="nav">
+  <div class="container">
+    <%= link_to "Home", "", class: "logo", id: "logo" %>
+    <div class="nav_item">
+      <%= link_to "Test", "", class: "nav-menu" %>
+    </div>
+    <% if logged_in? %>
+      <%= link_to "New Article", "/articles/new", class: "nav-menu" %>
+    <% end %>
+  </div>
+</header>

@@ -7,19 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="nav">
-    <div class="container">
-      <%= link_to "Home", "", class: "logo", id: "logo" %>
-      <div class="nav_item">
-        <%= link_to "Test", "", class: "nav-menu" %>
-      </div>
-    </div>
-  </header>
+  <%= render 'layouts/navigation' %>
   <div class="container">
+    <%= render 'layouts/messages' %>
     <%= yield %>
   </div>
-  <div class="footer container">
-    <p>&copy; My Articles 2016</p>
-  </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>

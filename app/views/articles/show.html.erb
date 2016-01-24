@@ -4,9 +4,11 @@
   <div class="col-md-4 pull-right center">
     <p>Written by: <%= @article.user.first_name %> <%= @article.user.last_name %></p>
   </div>
+  <% if logged_in? %>
   <div class="">
     <%= link_to "Edit this Article", edit_article_path(@article), class: "btn btn-success pull-right" %>
   </div>
+  <% end %>
   <div class="well">
     <div class="picture">
       <%= image_tag(@article.picture.url, size: "250x150", class: "img-response") if @article.picture? %>
