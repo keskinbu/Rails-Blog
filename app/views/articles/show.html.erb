@@ -1,6 +1,5 @@
-<p>
-  <h1><%= @article.title %></h1>
-</p>
+<%= render 'shared/page_title', title: @article.title %>
+
 <div class="container">
   <div class="col-md-4 pull-right center">
     <p>Written by: <%= @article.user.first_name %> <%= @article.user.last_name %></p>
