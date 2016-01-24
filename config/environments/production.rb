@@ -79,5 +79,5 @@ Rails.application.configure do
   
   ENV['S3_ACCESS_KEY'] = "AKIAJIGIC3NTDMXE7OZA"
   ENV['S3_BUCKET'] = "rails-blog-system"
-  ENV['S3_SECRET_KEY'] = "Jned2Aht81IAeFM8pD1RLBsvlO"
+  ENV['S3_SECRET_KEY'] = "Jned2Aht81IAeFM8pD1RLBsvlO/IVEP5+oDxy1WE"
 end
