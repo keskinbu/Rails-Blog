@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 3)
   end
   
   def show
@@ -35,6 +35,18 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       render :edit
+    end
+  end
+  
+  def like
+    @article = Article.find(params[:id])
+    like = Like.create(like: params[:like], user: User.first, article: @article)
+    if like.valid?
+      flash[:success] = "Your selection was succesful"
+      redirect_to :back
+    else
+      flash[:danger] = "You can only like/dislike a article once"
+      redirect_to :back
     end
   end
   

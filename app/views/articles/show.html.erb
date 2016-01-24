@@ -15,6 +15,14 @@
   
     <p>
       <%= simple_format(@article.content) %>
+      <div class="pull-right">
+        <%= link_to like_article_path(@article, like:true), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @article.thumbs_up_total %>
+        <% end %> &nbsp&nbsp&nbsp&nbsp
+        <%= link_to like_article_path(@article, like:false), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @article.thumbs_down_total %>
+        <% end %>
+      </div>
     </p>
 
   </div>
