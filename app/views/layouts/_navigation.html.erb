@@ -1,11 +1,23 @@
 <header class="nav">
-  <div class="container">
-    <%= link_to "Home", "", class: "logo", id: "logo" %>
-    <div class="nav_item">
-      <%= link_to "Test", "", class: "nav-menu" %>
+  <div class="container header">
+    <div class="col-md-2 logo_area">
+      <%= link_to "Home", root_path, class: "logo", id: "logo" %>
+    </div>
+    <div class="col-md-8 nav_item">
+      <%= link_to "Articles", articles_path, class: "nav-menu" %>
     </div>
     <% if logged_in? %>
-      <%= link_to "New Article", "/articles/new", class: "nav-menu" %>
+    <div class="logged_in_nav">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Settings
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><%= link_to "New Article", "/articles/new", class: "nav-menu" %></li>
+        </ul>
+      </div>
+    </div>
     <% end %>
   </div>
 </header>

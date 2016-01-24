@@ -46,6 +46,9 @@ a:hover {
   color: #0088cc;
 }
 
+.header {
+  margin-top: 0.5%;
+}
 
 $navbar-default-bg: #321321;
 $light-orange: #ff8c00;
@@ -63,6 +66,10 @@ $navbar-default-color: $light-orange;
 
 #logo:hover{
   color: white;
+}
+
+.logo_area {
+
 }
 
 .nav {
@@ -126,3 +133,30 @@ span.picture {
   text-align: center;
 }
 
+.search_area input {
+  margin-top: 4%;
+  font-size: 1.5em;
+  line-height: 2;
+}
+
+.search_area input:focus {
+  outline: none;
+}
+
+.home_area {
+  margin-top: 2%;
+}
+
+.home_area p a{
+  font-size: 1.2em;
+  font-weight: 20;
+}
+
+.logged_in_nav {
+  float: right;
+}
+
+.dropdown-toggle, .dropdown-menu, .dropdown-menu li a{
+  background-color: #333333;
+  color: #fff;
+}
