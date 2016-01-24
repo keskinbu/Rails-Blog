@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  S3_ACCESS_KEY = AKIAJJFST2PYIY4S2BZQ
-  S3_BUCKET = rails-blog-system
-  S3_SECRET_KEY = fa24ff8d346c924a01b100c7902b8ab7444d791f277eca4b1e3d429d8a54988a221f73f0c0c5fe3a65bb49814dc41c1b0cb567be3ae0cfc0d0937c5c12ffb3e4
+  ENV['S3_ACCESS_KEY'] = "AKIAJJFST2PYIY4S2BZQ"
+  ENV['S3_BUCKET'] = "rails-blog-system"
+  ENV['S3_SECRET_KEY'] = "fa24ff8d346c924a01b100c7902b8ab7444d791f277eca4b1e3d429d8a54988a221f73f0c0c5fe3a65bb49814dc41c1b0cb567be3ae0cfc0d0937c5c12ffb3e4"
 end
