@@ -1,6 +1,6 @@
-<%= render 'shared/page_title', title: 'All Articles' %>
+<%= render 'shared/page_title', title: 'Articles for: ' + @style.name %>
 
-<% @articles.each do |article| %>
+<% @style.articles.each do |article| %>
   <div class="container">
     
     <div class="col-lg-8 well article_area">
@@ -19,5 +19,5 @@
   
 <% end %>
 
-<%= will_paginate %>
+<%= will_paginate @articles%>
 
