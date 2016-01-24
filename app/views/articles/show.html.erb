@@ -1,31 +1,35 @@
 <%= render 'shared/page_title', title: @article.title %>
 
 <div class="container">
-  <div class="col-md-4 pull-right center">
-    <p>Written by: <%= @article.user.first_name %> <%= @article.user.last_name %></p>
-  </div>
+  
   <% if logged_in? %>
   <div class="">
     <%= link_to "Edit this Article", edit_article_path(@article), class: "btn btn-success pull-right" %>
   </div>
   <% end %>
-  <div class="well">
-    <div class="picture">
-      <%= image_tag(@article.picture.url, size: "250x150", class: "img-response") if @article.picture? %>
-    </div>
-  
-    <p>
-      <%= simple_format(@article.content) %>
-      <div class="pull-right">
-        <%= link_to like_article_path(@article, like:true), method: :post do %>
-          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @article.thumbs_up_total %>
-        <% end %> &nbsp&nbsp&nbsp&nbsp
-        <%= link_to like_article_path(@article, like:false), method: :post do %>
-          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @article.thumbs_down_total %>
-        <% end %>
+  <div class="col-md-12">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="picture">
+        <%= image_tag(@article.picture.url, class: "img-response") if @article.picture? %>
       </div>
-    </p>
-
+    
+      <p>
+        <%= simple_format(@article.content) %>
+        <div class="pull-right">
+          <%= link_to like_article_path(@article, like:true), method: :post do %>
+            <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @article.thumbs_up_total %>
+          <% end %> &nbsp&nbsp&nbsp&nbsp
+          <%= link_to like_article_path(@article, like:false), method: :post do %>
+            <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @article.thumbs_down_total %>
+          <% end %>
+        </div>
+      </p>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-4 pull-left center">
+    <p>Written by: <%= @article.user.first_name %> <%= @article.user.last_name %></p>
+  </div>
   </div>
 </div>
 

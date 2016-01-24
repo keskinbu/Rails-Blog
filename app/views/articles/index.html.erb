@@ -8,7 +8,7 @@
         <%= image_tag(article.picture.url, size: "250x150", class: "img-response") if article.picture? %>
       </div>
       <h4><%= link_to article.title, article_path(article) %></h4>
-      <p><%= article.content %></p>
+      <p><%= simple_format(article.content) %></p>
       <p>Category: <%= render article.styles %></p>
       <p>
         <span class="quiet"><small> <%= time_ago_in_words(article.created_at) %> ago</small></span>
