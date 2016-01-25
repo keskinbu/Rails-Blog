@@ -17,6 +17,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bcrypt', '3.1.7'
 gem 'fog', '~> 1.36'
 gem 'friendly_id', '~> 5.1.0'
+gem 'meta-tags'
 
 gem 'spring', group: :development
 

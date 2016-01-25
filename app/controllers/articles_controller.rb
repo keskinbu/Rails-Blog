@@ -5,11 +5,21 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
   
   def index
+    set_meta_tags site: 'Burak Keskin', title: 'All Articles', reverse: true
+    set_meta_tags description: ''
+    set_meta_tags keywords: ''
     @articles = Article.paginate(page: params[:page], per_page: 3)
   end
   
   def show
-    
+    set_meta_tags title: @article.title
+    set_meta_tags description: @article.summary
+    set_meta_tags keywords: @article.tags
+    set_meta_tags twitter: {
+      card: "keskinbu",
+      site: "@keskinbu"
+    }
+    set_meta_tags author: "Burak Keskin"
   end
   
   def new
